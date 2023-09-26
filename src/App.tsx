@@ -53,18 +53,7 @@ function AccordionItem({ num, title, text, isOpenAll }: AccordionItemProps) {
     setIsOpen(isOpenAll);
   }, [isOpenAll]);
 
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (itemRef.current && !itemRef.current.contains(event.target as Node)) {
-        setIsOpen(false);
-      }
-    }
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
+  
 
 
   return (
