@@ -1,0 +1,130 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease; /* Add a default transition for all properties */
+}
+
+/* Apply a modern font family and background color to the body */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #343a40;
+  line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scrollbars */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for background-color and color */
+}
+
+/* Center the accordion container on the page */
+.accordion {
+  width: 80%; /* Responsive width */
+  max-width: 700px;
+  margin: 50px auto; /* Center the accordion */
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  transition: width 0.3s ease; /* Add transition for width */
+}
+
+/* Style for accordion item container */
+.item {
+  background-color: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 10px;
+  overflow: hidden; /* Hide overflow on rounded corners */
+  cursor: pointer;
+  transition: box-shadow 0.3s ease-in-out, height 0.3s ease-in-out, background-color 0.3s ease; /* Add transition for background-color */
+}
+
+/* Hover effect for accordion item */
+.item:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Number styling */
+.number {
+  font-size: 24px;
+  font-weight: bold;
+  color: #6c757d;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease; /* Add transition for color */
+}
+
+/* Title styling */
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: color 0.3s ease; /* Add transition for color */
+}
+
+/* Icon styling */
+.icon {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  transition: color 0.3s ease; /* Add transition for color */
+}
+
+/* Content box styling */
+.content-box {
+  padding: 20px 24px;
+  line-height: 1.6;
+  display: none; /* Hide content by default */
+  background-color: #f8f9fa;
+  transition: opacity 0.3s ease; /* Add transition for opacity */
+}
+
+/* Open state styling */
+.open .content-box {
+  display: block; /* Show content when open */
+  opacity: 1; /* Fade in effect */
+}
+
+/* Open state border and color */
+.open {
+  border-top: 4px solid #087f5b;
+  color: #087f5b;
+}
+
+/* Button for Toggle All */
+.toggle-all-button {
+  background-color: #087f5b;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for background-color and color */
+}
+
+/* Animation for height change */
+@keyframes expand {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: auto;
+  }
+}
+
+.expanded {
+  animation: expand 0.3s ease-in-out; /* Apply the animation on expanding */
+}
+
+/* Add smooth scrolling for opened item */
+.open {
+  scroll-margin-top: 24px; /* Space above the item when scrolling to it */
+}
